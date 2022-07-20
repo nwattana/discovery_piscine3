@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+}
+
+.hide {
+    display: none;
+}
+
+.top {
+    height: 30px;
+    width: 100px;
+    background-color: lime;
+    border: 1px solid black;
+    border-radius: 5px 5px 0px 0px;
+    padding-left: 10px;
+}
+
+.list {
+    height: 30px;
+    width: 95px;
+    background-color: wheat;
+    border:1px solid black;
+    padding-left: 10px;
+}
+
+.dropdown:hover .hide
+{
+    display:block;
+}
+
+.list:hover {
+    width: 100px;
+}

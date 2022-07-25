@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bigbox
+        {
+            display: fixed;
+            width:inherit;
+            height:inherit;
+        }
+        .bigbox2
+        {
+            height: inherit;
+            display: flex;
+            justify-content: center;
+            flex-direction:row;
+        }
+        .mainbox
+        {
+            margin: auto;
+        }
+        .containner
+        {
+            width: 80vw;
+            height: 80vh;
+            margin: auto;
+            margin-top: 10vh;
+            background-color: rgba(255, 255, 255, 0.865);
+        }
+
+        .bigcon
+        {
+            background-image: url("eiei.gif");
+            z-index: index -1;
+        }
+    </style>
+</head>
+<body>
+    <div class="bigcon">
+        <div class="containner">
+            <div class="bigbox">
+                <div class="bigbox2">
+                    <div class="mainbox">
+                            <input type="text" id="parem1" name="fname" value=" ">
+                            <select name="cars" id="sign">
+                                <option value="f1">&#43</option>
+                                <option value="f2">&#45</option>
+                                <option value="f3">&#42</option>
+                                <option value="f4">&#47</option>
+                                <option value="f5">&#37</option>
+                            </select>
+                            <input type="text" id="parem2" name="lname" value=" ">
+                            <button type="button" onclick="docalc('parem1', 'sign', 'parem2');" >Try Me!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var timmie = setInterval(UseMe, 30000);
+        function docalc(para1 , sign, para2)
+        {
+            let parem1 = document.getElementById(para1).value;
+            let sign1 = document.getElementById(sign).value;
+            let parem2 = document.getElementById(para2).value;
+            var res = 0;
+            clearInterval(timmie);
+            if ((isNaN(parseFloat(parem1)) || isNaN(parseFloat(parem2))))
+                res = 'Error :(';
+            else
+            {
+                parem1 = parseFloat(parem1);
+                parem2 = parseFloat(parem2);
+                if (parem1 < 0 || parem2 < 0)
+                    res = 'Error :(';
+                else
+                {
+                    if (sign1 == 'f1')
+                        res = parem1 + parem2;
+                    else if (sign1 == 'f2')
+                        res = parem1 - parem2;
+                    else if (sign1 == 'f3')
+                        res = parem1 * parem2;
+                    else if (sign1 == 'f4')
+                    {
+                        if (parem2 == 0)
+                            res = "It's over 9000!";
+                        else
+                            res = parem1 / parem2;
+                    }
+                    else if (sign1 == 'f5')
+                    {
+                        if (parem2 == 0)
+                            res = "It's over 9000!";
+                        else
+                            res = parem1 % parem2;
+                    }
+                }
+            }
+            alert(res);
+            console.log(res);
+            timmie = setInterval(UseMe, 30000);
+        }
+
+        function    UseMe()
+        {
+            alert("'Please, use me...'")
+        }
+
+    </script>
+</body>
+</html>

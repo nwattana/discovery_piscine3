@@ -1,64 +1,50 @@
 *
 {
     margin:0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-.para1
+.pic
 {
-    display: flex;
-    flex-direction:column;
-    justify-content: center;
-    background-image: url("https://picsum.photos/id/1005/1920/1024");
     width: 100vw;
     height: 100vh;
-}
-
-.para2
-{
-    display: flex;
-    flex-direction:column;
-    justify-content: center;
-    background-image: url("https://picsum.photos/id/1011/1920/1024");
-    width: 100vw;
-    height: 100vh;
-}
-
-.no
-{
-    background-color: rgba(0, 0, 0, 0);
-    width: 100vw;
-    height: 60vh;
-}
-
-.black
-{
-    display: flex;
-    flex-direction:column;
-    justify-content: center;
-    background-color: black;
-    width: 100vw;
-    height: 60vh;
-}
-
-.content
-{
-    font-size: 20px;
-    color: whitesmoke;
+    background-repeat: no-repeat;
+    background-size: cover; /* Cover entier box*/
     text-align: center;
+    color: whitesmoke;
 }
-
 .top
 {
-    font-size: 10px;
-    padding:20px;
-    font-family: Helvetica, sans-serif;
+    background-image: url("https://picsum.photos/id/1005/1920/1024");
 }
 
-.bottom
+.bot
 {
-    color: rgb(64, 0, 255);
-    font-family: Helvetica, sans-serif;
-    font-size: 10px;
-    padding:20px;
+    background-image: url("https://picsum.photos/id/1011/1920/1024");
+}
+
+.middle
+{
+    width: 100vw;
+    height: 40vh;
+    background-color: black;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.cont
+{
+    background-color: black;
+    display: block;
+
+}
+.content
+{
+    display: inline-block;
+    margin-top: 50vh;
+    font-size: 14px;
 }

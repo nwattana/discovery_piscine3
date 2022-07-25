@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            box-sizing: border-box;
+            padding:0;
+        }
+
+        .container
+        {
+            background-image: url(https://picsum.photos/id/1076/1920/1024);
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 100vw;
+            height: 100vh;
+            padding-top: 5vh;
+            padding-left: 5vw;
+        }
+
+        .container2
+        {
+            background-color: rgba(93, 178, 252, 0.596);
+            width: 90vw;
+            height: 90vh;
+            padding: auto;
+        }
+
+        .con-big
+        {
+            width: inherit;
+            height: inherit;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .con1
+        {
+            text-align: center;
+        }
+
+        .con2
+        {
+
+            width:20vw;
+            /* background-color: rgba(7, 244, 244, 0.71); */
+            display: inline-block;
+        }
+
+        .title
+        {
+            font-size: 50px;
+            display: inline;
+            text-align: center;
+            color: aliceblue;
+        }
+
+        .subtitle
+        {
+            margin-top: 2vh;
+            font-size: 0.75em;
+            color: aliceblue;
+        }
+
+        .link
+        {
+            margin-top: 1vh;
+            width: 5em;
+            height: 2em;
+            border: solid 1px rgb(0, 0, 0);
+            padding: 0.25em;
+            display: inline-block;
+            background-color: azure;
+        }
+
+        .link:hover
+        {
+            background-color: rgb(120, 160, 220);
+            color: black;
+        }
+
+        @media screen and (max-width: 600px) {
+        div.container {
+            background-image: url(https://picsum.photos/id/1076/1024/1024);
+
+        }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="container2">
+            <div class="con-big">
+                <div class="con1">
+                    <div class="title"> My First Web Site</div><br>
+                    <div class="subtitle">Lorem ipsum dolor sit amet, consectetur</div>
+                    <div class="con2">
+                    
+                    <a href="./nav_bar.html"><div class="link">CV 1</div></a>
+                    <a href="#"><div class="link">CV 2</div></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

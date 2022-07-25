@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Click Me!</title>
+    <link rel="stylesheet" href="background.css"
+</head>
+<body>
+    <button type="button" onclick="document.body.style.backgroundColor=makecolor();">Click Me!</button>
+    <script>
+        function makecolor()
+        {
+            let color = "#";
+            for(let i = 0; i<6;i++)
+            {
+                color= color + "0123456789ABCDEF"[Math.floor(15*Math.random())];
+            }
+            console.log(color)
+            return color;
+        }
+    </script>
+</body>
+</html>

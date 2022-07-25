@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nav Bar</title>
+    <!-- Menu Icon -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Import area */
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 48
+        }
+
+        /* Import area */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .navbar ul li a:hover {
+            text-decoration: none;
+            color: rgb(141, 141, 141);
+        }
+
+        a:visited {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        a {
+            text-decoration: none;
+            font-weight: 500;
+            color:  black;
+        }
+
+        body {
+            background-color: cornflowerblue;
+            height: 500vh;
+            align-items: center;
+            background-image: url();
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: end;
+            /* อย๋าลืมเปลี่ยน */
+            background-color: rgb(255, 255, 255);
+            height: 3.5rem;
+            width: 100vw;
+            margin: auto;
+            position: fixed;
+            z-index: index 1;
+        }
+
+        .left {
+            width: 60vw;
+            height: inherit;
+
+        }
+
+        .navbar ul {
+            display: flex;
+            justify-content: flex-end;
+            width: inherit;
+            height: inherit;
+        }
+
+        .navbar ul li {
+            /* Content position */
+            padding-left: 0.25em;
+            padding-right: 0.25em;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            height: inherit;
+            /* Changing look */
+            /* border: solid 1px black; */
+            background-color: rgb(255, 255, 255);
+            border-radius: 5%;
+            margin: 0.1em;
+            /* width: 9vw; */
+        }
+
+        .navbar ul li:hover {
+            /* border: solid 2px rgb(160, 160, 160); */
+            color: rgb(187, 187, 187);
+        }
+
+        .navbar {
+            display: inline-block;
+            height: 3rem;
+            display: flex;
+            justify-content: flex-end;
+            margin-right: 10vw;
+        }
+
+        .right {
+            display: none;
+        }
+
+        .navhide {
+            display: none;
+        }
+
+        .hello {
+            width: 100vw;
+            font-size: 50px;
+            text-align: center;
+            background-color: red;
+            height: 100vh;
+        }
+
+        @media screen and (max-width: 768px) {
+            .left {
+                display: none;
+            }
+
+            .right {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                margin-right: 20px;
+            }
+
+            .navhide {
+                background-color: white;
+                width: 100vw;
+                z-index: index 1;
+                height: 100vh;
+                position: fixed;
+            }
+
+            .navhide ul {
+                position: relative;
+                top: 3rem;
+                width: 100vw;
+                display: inline;
+                text-align: center;
+                border: none;
+            }
+
+            .navhide ul li {
+                width: inherit;
+                text-align: center;
+                border: none;
+                margin-top: 0.5rem;
+            }
+
+            .navhide ul li:hover {
+                border: solid 1px;
+            }
+        }
+
+        @media screen and (max-width: 1024px) {
+            .left {
+                width: inherit;
+                justify-content: space-between;
+            }
+
+            .navbar {
+                margin-right: 0;
+            }
+
+            .left ul {
+                width: inherit;
+            }
+
+            .navbar {
+                justify-content: center;
+            }
+
+            .nav-container {
+                width: 100vw;
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav-container" id="navbar">
+        <div class="right" onclick="document.getElementById('navhide').style.display='block'">
+                <span class="material-symbols-outlined">
+                    menu
+                </span>
+        </div>
+        <div class="left">
+            <div class="navbar">
+                <ul>
+                    <li><a href="#hello1">PROFILE</a></li>
+                    <li><a href="#hello2">EXPERIANCE</a></li>
+                    <li><a href="#hello3">SKILL</a></li>
+                    <li><a href="#hello4">CONTACT</a></li>
+                    <li><a href="#hello5">CONTACT</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="navhide" id="navhide" style="display:none;"
+        onclick="document.getElementById('navhide').style.display='none'">
+        <ul>
+            <li><a href="#hello1">PROFILE</a></li>
+            <li><a href="#hello2">EXPERIANCE</a></li>
+            <li><a href="#hello3">SKILL</a></li>
+            <li><a href="#hello4">CONTACT</a></li>
+            <li><a href="#hello5">CONTACT</a></li>
+        </ul>
+    </div>
+    <div class="hello" id="hello1" style="background-color: yellow;"></div>
+    <div class="hello" id="hello2" style="background-color: blue;"></div>
+    <div class="hello" id="hello3" style="background-color: green;"></div>
+    <div class="hello" id="hello4" style="background-color: pink;"></div>
+    <div class="hello" id="hello5" style="padding-top: 4rem;"> Hello World</div>
+</body>
+
+</html>

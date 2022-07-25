@@ -1,14 +1,15 @@
 td {
-    height:100vh;
+
     border: 1px solid black;
     padding:5px;
     margin:0;
 }
 table
 {
+    height: 100vh;
+    position: fixed;
     margin: auto;
     width: 100%;
-    border-spacing: 0px;
     border-collapse: collapse;
 }
 

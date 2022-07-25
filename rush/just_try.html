@@ -118,14 +118,17 @@
             display: none;
         }
 
-        .hello {
+        .content-container {
             width: 100vw;
             font-size: 50px;
-            text-align: center;
             background-color: red;
-            height: 100vh;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            flex-wrap: nowrap;
         }
 
+        /* MQ */
         @media screen and (max-width: 768px) {
             .left {
                 display: none;
@@ -137,15 +140,13 @@
                 justify-content: center;
                 margin-right: 20px;
             }
-
             .navhide {
                 background-color: white;
                 width: 100vw;
-                z-index: index 1;
+                z-index: 30;
                 height: 100vh;
                 position: fixed;
             }
-
             .navhide ul {
                 position: relative;
                 top: 3rem;
@@ -154,16 +155,25 @@
                 text-align: center;
                 border: none;
             }
-
             .navhide ul li {
                 width: inherit;
                 text-align: center;
                 border: none;
                 margin-top: 0.5rem;
             }
-
             .navhide ul li:hover {
                 border: solid 1px;
+            }
+
+            .col{
+                width: 690px;
+                display: inline-block;
+            }
+            .content-container{
+                height: auto;
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
             }
         }
 
@@ -189,6 +199,10 @@
                 width: 100vw;
                 margin: 0;
             }
+
+            .col{
+                display: inline;
+            }
         }
 
 
@@ -205,14 +219,15 @@
 
         .content-main
         {
-            z-index: 3;
+            z-index: 4;
+            width: 90vh;
         }
 
         .col
         {
             height: inherit;
             width: 45%;
-            display: inline-block;
+            display: inline;
         }
         .content-main .top
         {
@@ -277,12 +292,10 @@
             padding-left: 15% ;
         }
 
-        .pspace
+        .small-newline
         {
-            margin-top: 1rem;
+            display: none;
         }
-
-        
     </style>
 </head>
 
@@ -318,10 +331,10 @@
         </ul>
     </div>
     <div class="content-main">
-        <div class="top hello " id="hello1" style="background-color: rgba(191, 211, 255, 0.062);">
+        <div class="top content-container" id="hello1" style="background-color: rgba(191, 211, 255, 0.062);">
         Hello1
         </div>
-        <div class="profile hello" id="hello2" style="background-color: rgba(255, 255, 255, 0.979);">
+        <div class="profile content-container" id="hello2" style="background-color: rgba(255, 255, 255, 0.979);">
             <div class="col">
                 <div class="border">
                         <div class="profile pic">
@@ -333,14 +346,14 @@
             <div class="col">
                 <div class="profile pspace name">Eikichi Onizuka</div>
                 <div class="profile pspace sub-title">AKA. Onisuka sensei</div>
-                <div class="profile pspace title">Strongest Teacher</div>
-                <div class="profile pspace info">Date of birth : 1 Jan 2000</div><br><br><br>
+                <div class="profile pspace title">The Strongest Teacher</div>
+                <div class="profile pspace info">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing</div><br><br><br>
             </div>
 
         </div>
-        <div class="hello" id="hello3" style="background-color: green;"></div>
-        <div class="hello" id="hello4" style="background-color: pink;"></div>
-        <div class="hello" id="hello5" style="padding-top: 4rem;"> Hello World</div>
+        <div class="content-container" id="hello3" style="background-color: green;"></div>
+        <div class="content-container" id="hello4" style="background-color: pink;"></div>
+        <div class="content-container" id="hello5" style="padding-top: 4rem;"> Hello World</div>
     </div>
 
 </body>

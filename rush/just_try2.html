@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nav Bar</title>
+    <!-- Menu Icon -->
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" /> -->
+
+<!-- Defualt reset and Page tag -->
+    <style>
+            * {
+                margin: 0;
+                box-sizing: border-box;
+                padding: 0;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            html{
+                scroll-behavior: smooth;
+            }
+
+            /* a tag clear defualt */
+            a:visited {
+                text-decoration: none;
+                color: inherit;
+            }
+
+            a {
+                text-decoration: none;
+                font-weight: 500;
+                color:  black;
+            }
+
+            body {
+                background-color: cornflowerblue;
+                height: 290vh;
+                align-items: center;
+                background-image: url(./oni/bg.png);
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+    </style>
+
+<!-- nav-bar -->
+    <style>
+        .navbar ul li a:hover {
+            text-decoration: none;
+            color: rgb(141, 141, 141);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: end;
+            background-color: rgb(255, 255, 255);
+            height: 3.5rem;
+            width: 100vw;
+            margin: auto;
+            position: fixed;
+            z-index: index 1;
+        }
+
+        .left {
+            width: 60vw;
+            height: inherit;
+
+        }
+        .navbar ul {
+            display: flex;
+            justify-content: flex-end;
+            width: inherit;
+            height: inherit;
+        }
+
+        .navbar ul li {
+            /* Content position */
+            padding-left: 0.25em;
+            padding-right: 0.25em;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            height: inherit;
+            /* Changing look */
+            /* border: solid 1px black; */
+            background-color: rgb(255, 255, 255);
+            border-radius: 5%;
+            margin: 0.1em;
+        }
+
+        .navbar ul li:hover {
+            /* border: solid 2px rgb(160, 160, 160); */
+            color: rgb(187, 187, 187);
+        }
+        .navbar {
+            display: inline-block;
+            height: 3rem;
+            display: flex;
+            justify-content: flex-end;
+            margin-right: 10vw;
+            z-index: 20;
+        }
+        /* For small window size */
+        .right-menu-icon {
+            display: none;
+        }
+        /* menu in small mode */
+        .navhide {
+            display: none;
+            z-index: 20;
+        }
+       
+
+        @media screen and (max-width: 768px) {
+            .left {
+                display: none;
+            }
+            .right-menu-icon {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding-right: 20px;
+            }
+
+            .navhide {
+                background-color: white;
+                width: 100vw;
+                z-index: 20;
+                height: 100vh;
+                position: fixed;
+            }
+
+            .navhide ul {
+                position: relative;
+                top: 3rem;
+                width: 100vw;
+                display: inline;
+                text-align: center;
+                border: none;
+            }
+
+            .navhide ul li {
+                width: inherit;
+                text-align: center;
+                border: none;
+                margin-top: 0.5rem;
+            }
+
+            .navhide ul li:hover {
+                border: solid 1px;
+            }
+
+            .indent
+            {
+                display: block;
+                bottom: 0;
+            }
+        }
+
+        @media screen and (max-width: 1024px) {
+            .left {
+                width: inherit;
+                justify-content: space-between;
+            }
+
+            .navbar {
+                margin-right: 0;
+            }
+
+            .left ul {
+                width: inherit;
+            }
+
+            .navbar {
+                justify-content: center;
+            }
+
+            .nav-container {
+                width: 100vw;
+                margin: 0;
+            }
+        }
+    </style>
+
+<!-- Content -->
+<style>
+
+    .left-border
+    {
+        border-left: solid 2px gray ;
+    }
+    .long-page
+    {
+        background-image: url("./oni/bg.png");
+        background-size: cover;
+        background-repeat: no-repeat ;
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        z-index: -1;
+    }
+    .topimg
+    {
+        height: 80vh;
+        background-color: rgba(0, 136, 255, 0.046);
+    }
+    .content-container {
+        /* Close Height after finish */
+            /* height: 100vh; */
+            width: 100vw;
+            font-size: 50px;
+            text-align: center;
+            z-index: 4;
+    }
+
+    .profile
+    {
+        background-color: aliceblue;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        
+    }
+
+    .profile img
+    {
+        width: 300px;
+        height: 300px;
+        padding: 10px;
+    }
+
+    .profile .col
+    {
+        margin-top:3.3rem;
+    }
+    .col
+    {
+        display: inline-block;
+        width: 45%;
+        /* remove */
+        background-color: aliceblue;
+        margin-bottom: 3rem;
+    }
+
+    @media screen and (max-width: 1024px){
+        .col
+        {
+            width: 90vw;
+            border: none;
+        }
+
+        .content-container
+        {
+            height: auto;
+        }
+
+        .left-border
+        {
+            border-left: none ;
+        }
+
+        .bot-border
+        {
+            border-bottom: solid 1px gray ;
+        }
+
+        .map1{
+            display: none;
+        }
+
+        .map2{
+            display: initial;
+        }
+    }
+        .NameTitle{
+            font-size: 2.5rem;
+        }
+        .SubTitle{
+            font-size: 1.5rem;
+        }
+        .MiniText{
+            font-size: 1rem;
+        }
+        .smallText{
+            font-size: 0.75rem;
+        }
+        .indent
+        {
+            bottom:20%;
+        }
+        .TextLeft
+        {
+            text-align: left;
+        }
+
+        .parag{
+            width: 70%;
+            text-align: justify;
+        }
+
+        .qouat
+        {
+            font-style: italic;
+            width: 80%;
+            margin: auto;
+        }
+
+        .TopicTitle
+        {
+            font-size: 2rem;
+            font-weight: 500;
+            text-decoration: underline;
+        }
+
+        .warp
+        {
+            background-color: aliceblue;
+        }
+
+        .center-content1
+        {
+            align-items: flex-end;
+            padding-left: 10vw;
+        }
+        
+        .center-content1 img
+        {
+            width: 30vw;
+            height: 35vh;
+            margin-left: -5vw;
+        }
+
+        .content-container12
+        {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+         img
+        {
+            width: 300px;
+            height: 300px;
+        }
+        #content-container4 .col img{
+            width: 100px;
+            height: 100px;
+        }
+
+        .map1
+        {
+            display:initial;
+        }
+
+        .map2
+        {
+            display: none;
+        }
+</style>
+</head>
+
+<body>
+    <div class="navbar-container">
+    <div class="nav-container" id="navbar">
+        <div class="right-menu-icon" onclick="document.getElementById('navhide').style.display='block'">
+                <!-- <span class="material-symbols-outlined">menu</span> -->
+                <img src="menu.png" style="margin-right: 20px; width: 50px; height: 50px;">
+        </div>
+        <div class="left">
+            <div class="navbar">
+                <ul>
+                    <li><a href="#content-container2">PROFILE</a></li>
+                    <li><a href="#content-container2">EXPERIANCE</a></li>
+                    <li><a href="#content-container3">SKILL</a></li>
+                    <li><a href="#content-container4">CONTACT</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="navhide" id="navhide" style="display:none;"
+        onclick="document.getElementById('navhide').style.display='none'">
+        <ul>
+            <li><a href="#content-container1">PROFILE</a></li>
+            <li><a href="#content-container2">EXPERIANCE</a></li>
+            <li><a href="#content-container3">SKILL</a></li>
+            <li><a href="#content-container4">CONTACT</a></li>
+        </ul>
+    </div>
+    </div>
+
+    <div class="long-page" style="background-color:aliceblue"></div>
+    <div class="content-container topimg " id="content-container1" >
+
+    </div>
+    <div class="profile content-container" id="content-container2" >
+        <div class="col bot-border">
+            <div class="indent">
+            <img src="./oni/profile.png">
+            <div class="qouat SubTitle">
+                "I'm Onizuka Eikichi 22 years old, still single"
+            </div><br>
+            </div>
+        </div>
+        <div class="col left-border bot-border">
+            <div class="info">
+                <div class="NameTitle">Eikichi Onizuka</div>
+                <div class="MiniText">AKA. Onisuka sensei</div>
+                <div class="SubTitle">The Strongest Teacher</div>
+                <div class="parag TextLeft smallText" style="margin:auto; margin-top: 1em;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tincidunt elementum mattis. Nunc porttitor pulvinar convallis. Morbi molestie condimentum lectus, eu elementum ligula auctor quis. Donec vulputate metus sed ante malesuada pellentesque. Morbi ante dolor, faucibus nec libero sed, auctor facilisis ante. Nunc vel diam dapibus, porta nisi vel, malesuada urna. Morbi commodo congue dui nec viverra. Vivamus commodo vitae ligula a iaculis. Suspendisse vitae eros sit amet sapien maximus hendrerit et nec sem. In auctor, sem non volutpat tristique, nisi ligula rhoncus ante, non fringilla neque ex eu justo</div>
+                <br>
+            </div>
+        </div>
+    </div>
+    <div class="profile content-container" id="content-container3">
+        <div class="TopicTitle  ">
+            EXPERIENCE
+        </div>
+        <div class="content-container">
+            <div class="col bot-border">
+                <div class="center-content1">
+                 <div>
+                        <div class="SubTitle TextLeft">Y2017:</div>
+                        <div class="MiniText TextLeft">Graduation grade 12from : Tokyo kizzuzo</div>
+                        <div class="smallText TextLeft parag">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tincidunt elementum mattis. Nunc porttitor pulvinar convallis. Morbi molestie condimentum lectus, eu elementum ligula auctor quis. Donec vulputate metus sed ante malesuada pellentesque. Morbi ante dolor, faucibus nec libero sed, auctor facilisis ante. Nunc vel diam dapibus, porta nisi vel, malesuada urna. Morbi commodo congue dui nec viverra. Vivamus commodo vitae ligula a iaculis. Sus</div>
+                        <br><img src="./oni/cur-job1.png">
+                </div>
+                </div>
+            </div>
+            <div class="col left-border bot-border">
+                <div class="center-content1">
+                    <div>
+                           <div class="SubTitle TextLeft">Y2019:</div>
+                           <div class="MiniText TextLeft">Present: Teacher at Tokyo Kizzuzo</div>
+                           <div class="smallText TextLeft parag">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tincidunt elementum mattis. Nunc porttitor pulvinar convallis. Morbi molestie condimentum lectus, eu elementum ligula auctor quis. Donec vulputate metus sed ante malesuada pellentesque. Morbi ante dolor, faucibus nec libero sed, auctor facilisis ante. Nunc vel diam dapibus, porta nisi vel, malesuada urna. Morbi commodo congue dui nec viverra. Vivamus commodo vitae ligula a iaculis. Sus</div>
+                            <br><img src="./oni/cur-job.png">
+                    </div>
+                   </div>    
+            </div>
+        </div>
+    </div>
+    <div class="TopicTitle profile" style="text-align: center;">
+            CONTACT
+    </div>
+    <div class="profile content-container" id="content-container4" >
+        <div class="col bot-border">
+            <div class="SubTitle TextLeft">Tel:  +81-5-3467-5674</div>
+            <div class="SubTitle TextLeft">Tel:  E-mail: Onizuka99999@gmail.com</div>
+            <br>
+            <br>
+            <br>
+            <a href="#"><img src="./icon/facebook.png"></a>
+            <a href="#"><img src="./icon/github.png"></a>
+            <a href="#"><img src="./icon/linkedin.jpg"></a>
+            
+        </div>
+        <div class="col bot-border left-border">
+            <iframe class="map1" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30163.947478054903!2d139.6884126227786!3d35.701092880388416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188d2059b7fd4b%3A0xec61c68fe232efd2!2sShinjuku%20City%2C%20Tokyo%2C%20Japan!5e0!3m2!1sen!2sth!4v1658748781967!5m2!1sen!2sth" width="600" height="450" style="border:1;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe class="map2" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30163.947478054903!2d139.6884126227786!3d35.701092880388416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188d2059b7fd4b%3A0xec61c68fe232efd2!2sShinjuku%20City%2C%20Tokyo%2C%20Japan!5e0!3m2!1sen!2sth!4v1658748781967!5m2!1sen!2sth" width="400" height="300" style="border:1;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+</body>
+
+</html>

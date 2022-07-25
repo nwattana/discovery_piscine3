@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nav Bar</title>
+    <title>Try to domine</title>
     <!-- Menu Icon -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -50,8 +50,10 @@
             background-color: cornflowerblue;
             height: 500vh;
             align-items: center;
-            background-image: url();
+
         }
+
+
 
         .nav-container {
             display: flex;
@@ -62,7 +64,7 @@
             width: 100vw;
             margin: auto;
             position: fixed;
-            z-index: index 1;
+            z-index: 10;
         }
 
         .left {
@@ -188,10 +190,105 @@
                 margin: 0;
             }
         }
+
+
+        .background
+        {
+            z-index:-1;
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-image: url(./oni/bg.png);
+        }
+
+        .content-main
+        {
+            z-index: 3;
+        }
+
+        .col
+        {
+            height: inherit;
+            width: 45%;
+            display: inline-block;
+        }
+        .content-main .top
+        {
+            height: 80vh;
+        }
+
+        .content-main .profile
+        {
+            height: auto;
+
+        }
+
+        .content-main .profile .col .pic
+        {
+            text-align: left;
+            padding-left: 10vw;
+        }
+
+        .content-main .profile .col .pic img
+        {
+            position: relative;
+            bottom: 30vh;
+            padding:10px;
+            border: solid 2px rgb(255, 255, 255);
+            background-color: rgb(240, 237, 237);
+        }
+
+        .col .qouat
+        {
+            position: relative;
+            bottom: 20vh;
+            width: 80%;
+            text-align: center;
+            font-style: italic;
+            font-size: 30px;
+        }
+
+        .col .border
+        {
+            border-right: solid 2px grey;
+        }
+
+        .profile .name
+        {
+            /* padding-top: 5vh; */
+            font-size: 4rem;
+        }        
+        .profile .sub-title
+        {
+            /* padding-top: 5vh; */
+            font-size: 1.5rem;
+        }
+        .profile  .title
+        {
+            /* padding-top: 5vh; */
+            font-size: 2rem;
+        }
+        .profile .info
+        {
+            font-size: 1rem;
+            text-align: left;
+            padding-left: 15% ;
+        }
+
+        .pspace
+        {
+            margin-top: 1rem;
+        }
+
+        
     </style>
 </head>
 
 <body>
+    <div class="background">    </div>
+
     <div class="nav-container" id="navbar">
         <div class="right" onclick="document.getElementById('navhide').style.display='block'">
                 <span class="material-symbols-outlined">
@@ -221,8 +318,26 @@
         </ul>
     </div>
     <div class="content-main">
-        <div class="hello" id="hello1" style="background-color: yellow;"></div>
-        <div class="hello" id="hello2" style="background-color: blue;"></div>
+        <div class="top hello " id="hello1" style="background-color: rgba(191, 211, 255, 0.062);">
+        Hello1
+        </div>
+        <div class="profile hello" id="hello2" style="background-color: rgba(255, 255, 255, 0.979);">
+            <div class="col">
+                <div class="border">
+                        <div class="profile pic">
+                            <img src="./oni/profile.png" width="300px" height="300px">
+                        </div>
+                    <div class="qouat">"I'm Onizuka Eikichi 22 years old, still single"</div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="profile pspace name">Eikichi Onizuka</div>
+                <div class="profile pspace sub-title">AKA. Onisuka sensei</div>
+                <div class="profile pspace title">Strongest Teacher</div>
+                <div class="profile pspace info">Date of birth : 1 Jan 2000</div><br><br><br>
+            </div>
+
+        </div>
         <div class="hello" id="hello3" style="background-color: green;"></div>
         <div class="hello" id="hello4" style="background-color: pink;"></div>
         <div class="hello" id="hello5" style="padding-top: 4rem;"> Hello World</div>

@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nav Bar</title>
     <!-- Menu Icon -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" /> -->
+    
     <style>
         * {
             margin: 0;
@@ -18,13 +18,13 @@
         }
 
         /* Import area */
-        .material-symbols-outlined {
+        /* .material-symbols-outlined {
             font-variation-settings:
                 'FILL' 0,
                 'wght' 400,
                 'GRAD' 0,
-                'opsz' 48
-        }
+                'opsz' 50
+        } */
 
         /* Import area */
         html {
@@ -134,7 +134,7 @@
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
-                margin-right: 20px;
+                padding-right: 20px;
             }
 
             .navhide {
@@ -195,9 +195,8 @@
 <body>
     <div class="nav-container" id="navbar">
         <div class="right" onclick="document.getElementById('navhide').style.display='block'">
-                <span class="material-symbols-outlined">
-                    menu
-                </span>
+                <!-- <span class="material-symbols-outlined">menu</span> -->
+                <img src="menu.png" width="50px" height="50px" style="margin-right: 20px;">
         </div>
         <div class="left">
             <div class="navbar">

@@ -1,0 +1,129 @@
+
+.navbar ul li a:hover {
+    text-decoration: none;
+    color: rgb(141, 141, 141);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: end;
+    background-color: rgb(255, 255, 255);
+    height: 3.5rem;
+    width: 100vw;
+    margin: auto;
+    position: fixed;
+    z-index: index 1;
+}
+
+.left {
+    width: 60vw;
+    height: inherit;
+}
+.navbar ul {
+    display: flex;
+    justify-content: flex-end;
+    width: inherit;
+    height: inherit;
+}
+
+.navbar ul li {
+    /* Content position */
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: inherit;
+    /* Changing look */
+    /* border: solid 1px black; */
+    background-color: rgb(255, 255, 255);
+    border-radius: 5%;
+    margin: 0.1em;
+}
+
+.navbar ul li:hover {
+    /* border: solid 2px rgb(160, 160, 160); */
+    color: rgb(187, 187, 187);
+}
+.navbar {
+    height: 3rem;
+    display: flex;
+    margin-right: 5vw;
+    justify-content: flex-end;
+    z-index: 999;
+}
+/* For small window size */
+.right-menu-icon {
+    display: none;
+}
+/* menu in small mode */
+.navhide {
+    display: none;
+    z-index: 20;
+}
+
+
+@media screen and (max-width: 768px) {
+    .left {
+        display: none;
+    }
+    .right-menu-icon {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-right: 20px;
+    }
+
+    .navhide {
+        background-color: white;
+        width: 100vw;
+        z-index: 20;
+        height: 100vh;
+        position: fixed;
+    }
+
+    .navhide ul {
+        position: relative;
+        top: 3rem;
+        width: 100vw;
+        display: inline;
+        text-align: center;
+        border: none;
+    }
+
+    .navhide ul li {
+        width: inherit;
+        text-align: center;
+        border: none;
+        margin-top: 0.5rem;
+    }
+
+    .navhide ul li:hover {
+        border: solid 1px;
+    }
+
+    .indent
+    {
+        display: block;
+        bottom: 0;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .left {
+        width: inherit;
+        justify-content: space-between;
+    }
+    .navbar {
+        margin-right: 0;
+        justify-content: center;
+    }
+    .left ul {
+        width: inherit;
+    }
+    .nav-container {
+        width: 100vw;
+        margin: 0;
+    }
+}

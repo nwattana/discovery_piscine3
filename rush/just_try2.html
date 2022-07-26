@@ -6,9 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nav Bar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <!-- Menu Icon -->
     <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" /> -->
 
+    <link rel="stylesheet" href="footer.css">
 <!-- Defualt reset and Page tag -->
     <style>
             * {
@@ -35,12 +37,18 @@
             }
 
             body {
-                background-color: cornflowerblue;
+                background-color: rgba(100, 148, 237, 0);
                 height: 290vh;
                 align-items: center;
-                background-image: url(./oni/bg.png);
+                /* background-image: url(./oni/bg.png); */
                 background-repeat: no-repeat;
                 background-size: cover;
+            }
+
+            @media screen and (max-width: 768px) {
+                html{
+                    font-size: 16px;
+                }
             }
     </style>
 
@@ -65,7 +73,6 @@
         .left {
             width: 60vw;
             height: inherit;
-
         }
         .navbar ul {
             display: flex;
@@ -95,12 +102,10 @@
             color: rgb(187, 187, 187);
         }
         .navbar {
-            display: inline-block;
             height: 3rem;
             display: flex;
-            justify-content: flex-end;
             margin-right: 10vw;
-            z-index: 20;
+            z-index: 999;
         }
         /* For small window size */
         .right-menu-icon {
@@ -203,7 +208,7 @@
     }
     .topimg
     {
-        height: 80vh;
+        height: 70vh;
         background-color: rgba(0, 136, 255, 0.046);
     }
     .content-container {
@@ -218,7 +223,7 @@
     .profile
     {
         background-color: aliceblue;
-        display: flex;
+        /* display: flex; */
         flex-direction: row;
         justify-content: center;
         flex-wrap: wrap;
@@ -245,6 +250,11 @@
         margin-bottom: 3rem;
     }
 
+    @media screen and (max-width: 1920px){
+        .profile
+        {
+        }
+    }
     @media screen and (max-width: 1024px){
         .col
         {
@@ -297,8 +307,8 @@
         }
 
         .parag{
-            width: 70%;
             text-align: justify;
+            padding: 0 5vw;
         }
 
         .qouat
@@ -323,15 +333,8 @@
         .center-content1
         {
             align-items: flex-end;
-            padding-left: 10vw;
         }
         
-        .center-content1 img
-        {
-            width: 30vw;
-            height: 35vh;
-            margin-left: -5vw;
-        }
 
         .content-container12
         {
@@ -339,25 +342,17 @@
             flex-wrap: wrap;
         }
 
-         img
+        .exp-content
         {
-            width: 300px;
-            height: 300px;
+            padding: 0 5vw;
         }
-        #content-container4 .col img{
-            width: 100px;
-            height: 100px;
+        .div-img
+        {
+            width: 100%;
+            display: flex;
+            justify-content: center;
         }
 
-        .map1
-        {
-            display:initial;
-        }
-
-        .map2
-        {
-            display: none;
-        }
 </style>
 </head>
 
@@ -371,9 +366,8 @@
         <div class="left">
             <div class="navbar">
                 <ul>
-                    <li><a href="#content-container2">PROFILE</a></li>
-                    <li><a href="#content-container2">EXPERIANCE</a></li>
-                    <li><a href="#content-container3">SKILL</a></li>
+                    <li><a href="#content-container1">PROFILE</a></li>
+                    <li><a href="#content-container3">EXPERIANCE</a></li>
                     <li><a href="#content-container4">CONTACT</a></li>
                 </ul>
             </div>
@@ -383,21 +377,22 @@
         onclick="document.getElementById('navhide').style.display='none'">
         <ul>
             <li><a href="#content-container1">PROFILE</a></li>
-            <li><a href="#content-container2">EXPERIANCE</a></li>
-            <li><a href="#content-container3">SKILL</a></li>
+            <li><a href="#content-container3">EXPERIANCE</a></li>
             <li><a href="#content-container4">CONTACT</a></li>
         </ul>
     </div>
     </div>
 
     <div class="long-page" style="background-color:aliceblue"></div>
-    <div class="content-container topimg " id="content-container1" >
+    
+    <div class="content-container topimg " >
 
     </div>
+    <div id="content-container1"></div>
     <div class="profile content-container" id="content-container2" >
         <div class="col bot-border">
             <div class="indent">
-            <img src="./oni/profile.png">
+            <img src="./oni/profile.png" style="margin: auto;">
             <div class="qouat SubTitle">
                 "I'm Onizuka Eikichi 22 years old, still single"
             </div><br>
@@ -421,45 +416,70 @@
             <div class="col bot-border">
                 <div class="center-content1">
                  <div>
-                        <div class="SubTitle TextLeft">Y2017:</div>
-                        <div class="MiniText TextLeft">Graduation grade 12from : Tokyo kizzuzo</div>
+                        <div class="SubTitle TextLeft exp-content">Y2017:</div>
+                        <div class="MiniText TextLeft exp-content">Graduation grade 12from : Tokyo kizzuzo</div>
                         <div class="smallText TextLeft parag">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tincidunt elementum mattis. Nunc porttitor pulvinar convallis. Morbi molestie condimentum lectus, eu elementum ligula auctor quis. Donec vulputate metus sed ante malesuada pellentesque. Morbi ante dolor, faucibus nec libero sed, auctor facilisis ante. Nunc vel diam dapibus, porta nisi vel, malesuada urna. Morbi commodo congue dui nec viverra. Vivamus commodo vitae ligula a iaculis. Sus</div>
-                        <br><img src="./oni/cur-job1.png">
+                        <br>
+                        <div class="div-img"><img src="./oni/cur-job1.png"></div>
                 </div>
                 </div>
             </div>
             <div class="col left-border bot-border">
                 <div class="center-content1">
                     <div>
-                           <div class="SubTitle TextLeft">Y2019:</div>
-                           <div class="MiniText TextLeft">Present: Teacher at Tokyo Kizzuzo</div>
+                           <div class="SubTitle TextLeft exp-content">Y2019:</div>
+                           <div class="MiniText TextLeft exp-content">Present: Teacher at Tokyo Kizzuzo</div>
                            <div class="smallText TextLeft parag">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tincidunt elementum mattis. Nunc porttitor pulvinar convallis. Morbi molestie condimentum lectus, eu elementum ligula auctor quis. Donec vulputate metus sed ante malesuada pellentesque. Morbi ante dolor, faucibus nec libero sed, auctor facilisis ante. Nunc vel diam dapibus, porta nisi vel, malesuada urna. Morbi commodo congue dui nec viverra. Vivamus commodo vitae ligula a iaculis. Sus</div>
-                            <br><img src="./oni/cur-job.png">
+                            <br>
+                            <div class="div-img"><img src="./oni/cur-job.png"></div>
                     </div>
                    </div>    
             </div>
         </div>
     </div>
+    <div id="content-container4"></div>
     <div class="TopicTitle profile" style="text-align: center;">
             CONTACT
     </div>
-    <div class="profile content-container" id="content-container4" >
-        <div class="col bot-border">
-            <div class="SubTitle TextLeft">Tel:  +81-5-3467-5674</div>
-            <div class="SubTitle TextLeft">Tel:  E-mail: Onizuka99999@gmail.com</div>
-            <br>
-            <br>
-            <br>
-            <a href="#"><img src="./icon/facebook.png"></a>
-            <a href="#"><img src="./icon/github.png"></a>
-            <a href="#"><img src="./icon/linkedin.jpg"></a>
-            
+
+    <footer class="bg-gradient-to-r from-cyan-500 to-blue-500  text-center lg:text-left">
+        <div class="container p-6 text-white">
+          <div class="grid lg:grid-cols-2 gap-4">
+
+            <div class="lg:mb-0 mb-6 desktop-hide">
+                <img
+                  src="data:image/jpeg;base64,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"
+                  class="object-cover h-48 w-full rounded-md shadow-lg "
+                />
+              </div>
+            <div class="lg:mb-0 mb-6 mobile-hide">
+                <img
+                  src="https://pbs.twimg.com/media/FSvrIhQXEAEg0DL?format=jpg&name=360x360"
+                  class="w-full rounded-md shadow-lg"
+                />
+            </div>
+            <div class="mb-6 md:mb-0">
+              <h5 class="font-medium mb-2 uppercase">Contact</h5>
+      
+              <p class="mb-4">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
+                molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae
+                aliquam voluptatem veniam, est atque cumque eum delectus sint!
+              </p>
+              <p class="mb-4">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
+                molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae
+                aliquam voluptatem veniam, est atque cumque eum delectus sint!
+              </p>
+            </div>
+          </div>
         </div>
-        <div class="col bot-border left-border">
-            <iframe class="map1" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30163.947478054903!2d139.6884126227786!3d35.701092880388416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188d2059b7fd4b%3A0xec61c68fe232efd2!2sShinjuku%20City%2C%20Tokyo%2C%20Japan!5e0!3m2!1sen!2sth!4v1658748781967!5m2!1sen!2sth" width="600" height="450" style="border:1;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            <iframe class="map2" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30163.947478054903!2d139.6884126227786!3d35.701092880388416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188d2059b7fd4b%3A0xec61c68fe232efd2!2sShinjuku%20City%2C%20Tokyo%2C%20Japan!5e0!3m2!1sen!2sth!4v1658748781967!5m2!1sen!2sth" width="400" height="300" style="border:1;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      
+        <div class="text-center text-white p-4" style="background-color: rgba(0, 0, 0, 0.2);">
+          © 2022 Copyright:
+          <a class="text-white" href="https://tailwind-elements.com/">Tailwind Elements</a>
         </div>
-    </div>
+      </footer>
 </body>
 
 </html>
